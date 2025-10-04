@@ -1,8 +1,4 @@
-Of course! A professional `README.md` is essential for any serious project. It's your project's front door.
 
-Here is a comprehensive, professional, and well-structured `README.md` file in English. Just copy the entire content below and paste it into the `README.md` file in the root directory of your project on GitHub.
-
----
 
 # 🚀 Splora Search - An AI-Powered Search Engine for NASA's Bioscience Publications
 
