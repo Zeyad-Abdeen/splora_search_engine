@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BioSpace Explorer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1173d4",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+            keyframes: {
+              "bg-pan": {
+                "0%": { "background-position": "0% 50%" },
+                "50%": { "background-position": "100% 50%" },
+                "100%": { "background-position": "0% 50%" },
+              },
+            },
+            animation: {
+              "bg-pan": "bg-pan 15s ease-in-out infinite",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap px-10 py-3">
+    <!-- Left Side: Logo and About -->
+    <div class="flex items-center gap-8">
+        <a href="../home_page/code.html" class="flex items-center gap-4 text-white">
+            <img src="../assets/glass.png" alt="Splora Logo" class="h-8">
+        </a>
+        <a class="text-sm font-medium leading-normal text-black dark:text-white" href="../about_page/code.html">About</a>
+    </div>
+
+    <!-- Right Side: Icons -->
+    <div class="flex items-center gap-4">
+        <!-- Saved Articles Link -->
+        <a href="../saved_articles_page/code.html" class="p-2 text-black dark:text-white hover:text-primary dark:hover:text-primary" title="Saved Articles">
+            <span class="material-symbols-outlined">bookmark</span>
+        </a>
+        
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn p-2 text-black dark:text-white hover:text-primary dark:hover:text-primary" title="Toggle theme">
+            <span class="material-symbols-outlined theme-toggle-light-icon">light_mode</span>
+            <span class="material-symbols-outlined theme-toggle-dark-icon">dark_mode</span>
+        </button>
+    </div>
+</header>
+<main class="flex-grow">
+<div class="relative flex min-h-[480px] flex-col items-center justify-center gap-6 overflow-hidden rounded-xl px-10 pb-10">
+<div class="absolute inset-0 -z-10 bg-gradient-to-br from-indigo-900 via-slate-900 to-blue-900 bg-[length:200%_200%] animate-bg-pan"></div>
+<div class="flex flex-col gap-4 text-center max-w-2xl">
+<img src="../assets/logo.png" alt="Splora Logo" class="h-64 mx-auto">
+</div>
+<div class="w-full max-w-2xl px-4 py-10">
+    <!-- Replaced label with form -->
+    <form class="home-search-form flex h-14 w-full min-w-40 flex-col">
+        <div class="flex h-full w-full flex-1 items-stretch rounded-xl">
+            <div class="flex items-center justify-center rounded-l-xl border-r-0 border-none bg-white bg-opacity-10 pl-4 text-white dark:bg-opacity-10">
+                <span class="material-symbols-outlined">search</span>
+            </div>
+            <!-- Added home-search-input class -->
+            <input class="home-search-input form-input h-full w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl border-l-0 border-none bg-white bg-opacity-10 px-4 text-base font-normal leading-normal text-white placeholder:text-gray-300 focus:border-none focus:outline-0 focus:ring-0 dark:bg-opacity-10 dark:placeholder:text-gray-300" placeholder="Search for publications by topic, author, or mission..." value=""/>
+        </div>
+    </form>
+</div>
+</div>
+<div class="flex flex-col gap-10 px-4 py-10 @container">
+<div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4">
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-transparent bg-white p-6 dark:border-[#324d67] dark:bg-[#192633]">
+<div class="text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px">search</span>
+</div>
+<div class="flex flex-col gap-2">
+<h2 class="text-lg font-bold leading-tight text-black dark:text-white">Powerful Search</h2>
+<p class="text-sm font-normal leading-normal text-gray-600 dark:text-[#92adc9]">Quickly find relevant publications with our advanced search capabilities.</p>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-transparent bg-white p-6 dark:border-[#324d67] dark:bg-[#192633]">
+<div class="text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px">auto_awesome</span>
+</div>
+<div class="flex flex-col gap-2">
+<h2 class="text-lg font-bold leading-tight text-black dark:text-white">AI-Powered Summaries</h2>
+<p class="text-sm font-normal leading-normal text-gray-600 dark:text-[#92adc9]">Get concise summaries of complex research papers in seconds.</p>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-transparent bg-white p-6 dark:border-[#324d67] dark:bg-[#192633]">
+<div class="text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px">bookmark_add</span>
+</div>
+<div class="flex flex-col gap-2">
+<h2 class="text-lg font-bold leading-tight text-black dark:text-white">Personalized Collections</h2>
+<p class="text-sm font-normal leading-normal text-gray-600 dark:text-[#92adc9]">Save and organize your findings into personalized collections.</p>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-transparent bg-white p-6 dark:border-[#324d67] dark:bg-[#192633]">
+<div class="text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px">hub</span>
+</div>
+<div class="flex flex-col gap-2">
+<h2 class="text-lg font-bold leading-tight text-black dark:text-white">Visualize Connections</h2>
+<p class="text-sm font-normal leading-normal text-gray-600 dark:text-[#92adc9]">Explore the relationships between different research areas with our knowledge graph.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+<div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+<a class="min-w-40 text-base font-normal leading-normal text-gray-600 dark:text-[#92adc9]" href="#">Privacy Policy</a>
+<a class="min-w-40 text-base font-normal leading-normal text-gray-600 dark:text-[#92adc9]" href="#">Terms of Service</a>
+<a class="min-w-40 text-base font-normal leading-normal text-gray-600 dark:text-[#92adc9]" href="#">Contact</a>
+</div>
+<p class="text-base font-normal leading-normal text-gray-600 dark:text-[#92adc9]">&copy; 2025 Splora Search. All rights reserved.</p>
+<p class="text-sm font-normal leading-normal text-gray-600 dark:text-[#92adc9] mt-2">Built with passion for the NASA Space Apps Challenge.</p>
+</footer>
+</div>
+</div>
+
+<script src="../app.js"></script>
+</body></html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BioSpace Explorer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0B3D91", // Deep Blue
+                        "background-light": "#f6f7f8", // Cool Gray (lighter shade for light mode)
+                        "background-dark": "#101922", // Dark background
+                        "accent": "#FF7A00", // Bright Orange
+                        "secondary": "#D0D3D4", // Cool Gray
+                        "text-light": "#212121", // Dark Gray/Off-Black
+                        "text-dark": "#E5E7EB", // Light gray for dark mode
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1a2632",
+                        "border-light": "#E5E7EB",
+                        "border-dark": "#324d67",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+<style>
+    #modal-close {
+        font-size: 2rem;
+        line-height: 1;
+    }
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<!-- START: Updated Header -->
+<header class="sticky top-0 z-10 flex items-center justify-between whitespace-nowrap border-b border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark px-6 py-3 shadow-sm">
+    <!-- Left Side: Now has "About" link -->
+    <div class="flex items-center gap-6">
+        <a href="../home_page/code.html"><h2 class="text-text-light dark:text-text-dark text-lg font-bold">splora</h2></a>
+        <a href="../about_page/code.html" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary">About</a>
+    </div>
+
+    <!-- Middle: Search Bar -->
+    <div class="flex-1 max-w-2xl mx-auto">
+        <label class="flex w-full items-stretch rounded-lg h-10 border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark">
+            <div class="flex items-center justify-center pl-3">
+                <span class="material-symbols-outlined text-gray-400 dark:text-gray-500">search</span>
+            </div>
+            <input class="form-input flex w-full min-w-0 flex-1 rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-transparent h-full px-4" placeholder="Search by keyword, author, or title..." value=""/>
+            <button class="bg-primary text-white px-4 rounded-r-md hover:bg-primary/90 text-sm font-semibold">Search</button>
+        </label>
+    </div>
+
+    <!-- Right Side: Icons -->
+    <div class="w-24 flex justify-end items-center gap-2">
+        <a href="../saved_articles_page/code.html" class="p-2 text-text-light dark:text-text-dark hover:text-primary" title="Saved Articles">
+            <span class="material-symbols-outlined">bookmark</span>
+        </a>
+        <button class="theme-toggle-btn p-2 text-text-light dark:text-text-dark hover:text-primary" title="Toggle theme">
+            <span class="material-symbols-outlined theme-toggle-light-icon">light_mode</span>
+            <span class="material-symbols-outlined theme-toggle-dark-icon">dark_mode</span>
+        </button>
+    </div>
+</header>
+<!-- END: Updated Header -->
+<div class="flex flex-1">
+
+<main class="flex-1 p-8 bg-background-light dark:bg-background-dark">
+<div class="mb-6">
+<p class="text-text-light dark:text-text-dark text-2xl font-bold leading-tight">Navigating NASA's Bioscience Archives.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+    <!-- This area is now empty. The JavaScript will add search results here. -->
+</div>
+<!-- START: Updated Pagination Container -->
+<div class="mt-8 flex justify-center items-center gap-4">
+    <button id="previous-page-btn" class="hidden bg-gray-300 dark:bg-gray-600 text-black dark:text-white font-semibold py-2 px-6 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors">
+        Previous Page
+    </button>
+    <button id="next-page-btn" class="hidden bg-primary text-white font-semibold py-2 px-6 rounded-lg hover:bg-primary/90 transition-colors">
+        Next Page
+    </button>
+</div>
+<!-- END: Updated Pagination Container -->
+</main>
+</div>
+</div>
+<!-- Summary Modal -->
+<div id="summary-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+    <div class="bg-white dark:bg-card-dark rounded-lg shadow-xl p-8 max-w-2xl w-full max-h-[80vh] flex flex-col">
+        <div class="flex justify-between items-center mb-4 flex-shrink-0">
+            <h3 id="modal-title" class="text-xl font-bold text-primary">Summary Title</h3>
+            <button id="modal-close" class="text-gray-500 dark:text-gray-400 hover:text-red-500">&times;</button>
+        </div>
+        <div class="overflow-y-auto">
+            <p id="modal-summary" class="text-text-light dark:text-text-dark mb-6">
+                Summary content will be loaded here...
+            </p>
+            <a id="modal-url" href="#" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline text-sm">Read Full Article</a>
+        </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="../app.js"></script>
+</body></html>
