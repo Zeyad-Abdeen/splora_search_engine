@@ -1,0 +1,13 @@
+# Python virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Processed data files
+
+
+# Other generated files
+failed_urls.txt
+missing_urls.txt

@@ -1,0 +1,18 @@
+# Core data science and web libraries
+numpy
+pandas
+beautifulsoup4
+requests
+nltk
+Flask
+Flask-Cors
+scikit-learn
+sentence-transformers
+torch
+cohere
+
+# Production server
+gunicorn
+
+# Optional: for local development on Windows
+waitress

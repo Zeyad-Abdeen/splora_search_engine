@@ -1,0 +1,1 @@
+web: gunicorn server.google_search_api:app --log-file -
